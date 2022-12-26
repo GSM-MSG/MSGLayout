@@ -5,7 +5,7 @@ import UIKit
  */
 public struct MSGLayout {
     @discardableResult
-    static func buildLayout(
+    public static func buildLayout(
         @MSGLayoutBuilder<LayoutProvider> _ closure: () -> [LayoutProvider]
     ) -> [LayoutProvider] {
         let providers = closure()
@@ -16,7 +16,7 @@ public struct MSGLayout {
     }
 
     @discardableResult
-    static func rebuildLayout(
+    public static func rebuildLayout(
         @MSGLayoutBuilder<LayoutProvider> _ closure: () -> [LayoutProvider]
     ) -> [LayoutProvider] {
         let providers = closure()
