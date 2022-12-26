@@ -1,6 +1,6 @@
 # MSGLayout
 
-A Swift AutoLayout DSL for iOS and MSG.
+A Swift AutoLayout DSL for iOS in MSG Team.
 
 ## Constents
 - [MSGLayout](#msglayout)
@@ -20,11 +20,10 @@ A Swift AutoLayout DSL for iOS and MSG.
 
 
 ## Overview
----
+A Swift AutoLayouy DSL for iOS in MSG Team.
 
 
 ## Communication
----
 
 - If you found a bug, open an issue.
 - If you have a feature request, open an issue.
@@ -32,7 +31,6 @@ A Swift AutoLayout DSL for iOS and MSG.
 
 
 ## Installation
----
 
 ### Swift Package Manager
 [Swift Package Manager](https://www.swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
@@ -49,7 +47,6 @@ dependencies: [
 If you prefer not to use either of the aforementioned dependency managers, you can integrate SnapKit into your project manually.
 
 ## Usage
----
 
 ### Quick Start
 ```swift
