@@ -1,10 +1,10 @@
 import UIKit
 
-protocol SizeProvidable {
+public protocol SizeProvidable {
     var sizeProvider: SizeProvider { get set }
 }
 
-extension SizeProvidable {
+public extension SizeProvidable {
     private func transform(_ modifier: (inout SizeProvider) -> Void) -> Self {
         var new = self
         modifier(&new.sizeProvider)

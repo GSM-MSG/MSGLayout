@@ -50,7 +50,7 @@ To integrate `MSGLayout` into your Xcode project using Swift Package Manager, ad
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/GSM-MSG/MSGLayout.git", .upToNextMajor(from: "1.0.1"))
+    .package(url: "https://github.com/GSM-MSG/MSGLayout.git", .upToNextMajor(from: "1.0.2"))
 ]
 ```
 
