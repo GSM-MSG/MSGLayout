@@ -55,7 +55,7 @@ dependencies: [
 ```
 
 ### Manually
-If you prefer not to use either of the aforementioned dependency managers, you can integrate SnapKit into your project manually.
+If you prefer not to use either of the aforementioned dependency managers, you can integrate MSGLayout into your project manually.
 
 <br>
 
