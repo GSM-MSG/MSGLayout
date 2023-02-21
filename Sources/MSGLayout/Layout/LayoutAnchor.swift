@@ -34,13 +34,15 @@ public struct LayoutAnchor {
     let centerYAnchor: NSLayoutYAxisAnchor
 
     var superview: UIView? {
-        return view.superview
+        return view?.superview ?? layoutGuide?.owningView
     }
 
-    let view: UIView
+    let view: UIView?
+    let layoutGuide: UILayoutGuide?
 
     init(view: UIView) {
         self.view = view
+        self.layoutGuide = nil
         
         leadingAnchor = view.leadingAnchor
         trailingAnchor = view.trailingAnchor
@@ -54,6 +56,24 @@ public struct LayoutAnchor {
         topAnchor = view.topAnchor
         bottomAnchor = view.bottomAnchor
         centerYAnchor = view.centerYAnchor
+    }
+
+    init(layoutGuide: UILayoutGuide) {
+        self.view = nil
+        self.layoutGuide = layoutGuide
+
+        leadingAnchor = layoutGuide.leadingAnchor
+        trailingAnchor = layoutGuide.trailingAnchor
+        leftAnchor = layoutGuide.leftAnchor
+        rightAnchor = layoutGuide.rightAnchor
+        centerXAnchor = layoutGuide.centerXAnchor
+        
+        widthAnchor = layoutGuide.widthAnchor
+        heightAnchor = layoutGuide.heightAnchor
+        
+        topAnchor = layoutGuide.topAnchor
+        bottomAnchor = layoutGuide.bottomAnchor
+        centerYAnchor = layoutGuide.centerYAnchor
     }
 
     func anchor(_ type: XAxisAnchor) -> NSLayoutXAxisAnchor {
