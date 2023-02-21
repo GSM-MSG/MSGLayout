@@ -20,6 +20,10 @@ public struct LayoutRelationAnchor<Trait>: Transformable {
         .init(shouldUseSuperview: false, anchorElement: .init(view: view))
     }
 
+    public static func to(_ layoutGuide: UILayoutGuide) -> Self {
+        .init(shouldUseSuperview: false, anchorElement: .init(layoutGuide: layoutGuide))
+    }
+
     public static func toSuperview() -> Self {
         .init(shouldUseSuperview: true, anchorElement: nil)
     }
