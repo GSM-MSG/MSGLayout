@@ -10,6 +10,10 @@ public struct LayoutProvider: SizeProvidable, Transformable {
         self.target = .init(view: view)
     }
 
+    init(layoutGuide: UILayoutGuide) {
+        self.target = .init(layoutGuide: layoutGuide)
+    }
+
     private func getParentAnchorElement() -> LayoutAnchor? {
         assert(
             target.superview != nil,
@@ -240,7 +244,7 @@ public struct LayoutProvider: SizeProvidable, Transformable {
 
     @discardableResult
     public func activate() -> LayoutProvider {
-        target.view.translatesAutoresizingMaskIntoConstraints = false
+        target.view?.translatesAutoresizingMaskIntoConstraints = false
         let constraints = assembleConstraints()
         NSLayoutConstraint.activate(constraints)
         return self
@@ -248,7 +252,7 @@ public struct LayoutProvider: SizeProvidable, Transformable {
 
     @discardableResult
     public func removeConstraints() -> LayoutProvider {
-        target.view.removeAllConstraints()
+        target.view?.removeAllConstraints()
         return self
     }
 
