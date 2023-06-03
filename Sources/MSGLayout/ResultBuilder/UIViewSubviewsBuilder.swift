@@ -1,10 +1,12 @@
 import Foundation
+import UIKit
 
 /**
  UIViewSubviewsBuilder for UIView adding DSL
  */
 @resultBuilder
-public struct UIViewSubviewsBuilder<Element> {
+public struct UIViewSubviewsBuilder {
+    public typealias Element = UIView
     public static func buildBlock<C: Collection>(_ components: C...) -> [Element] where C.Element == Element {
         components.flatMap { $0 }
     }
