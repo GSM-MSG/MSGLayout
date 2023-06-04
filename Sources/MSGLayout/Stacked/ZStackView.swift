@@ -1,6 +1,6 @@
 import UIKit
 
-public final class ZStack: UIStackView {
+public final class ZStackView: UIStackView {
     public init(@UIViewSubviewsBuilder views: () -> [UIView]) {
         super.init(frame: .zero)
         let container = UIView()

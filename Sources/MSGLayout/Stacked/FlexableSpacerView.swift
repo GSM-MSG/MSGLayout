@@ -1,6 +1,6 @@
 import UIKit
 
-final class FlexableSpacer: UIView {
+public final class FlexibleSpacerView: UIView {
     public init() {
         super.init(frame: .zero)
         self.setContentHuggingPriority(.fittingSizeLevel, for: .horizontal)

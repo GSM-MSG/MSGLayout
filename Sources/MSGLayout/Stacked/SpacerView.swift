@@ -1,6 +1,6 @@
 import UIKit
 
-public final class Spacer: UIView {
+public final class SpacerView: UIView {
     public init() {
         super.init(frame: .zero)
     }

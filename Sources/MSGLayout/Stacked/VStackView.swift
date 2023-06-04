@@ -1,6 +1,6 @@
 import UIKit
 
-public final class VStack: UIStackView {
+public final class VStackView: UIStackView {
     public init(
         spacing: CGFloat = 0,
         alignment: UIStackView.Alignment = .fill,

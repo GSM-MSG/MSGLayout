@@ -107,12 +107,16 @@ final class ViewController: UIViewController {
         redView.backgroundColor = .red
         greenView.backgroundColor = .green
 
-        MSGLayout.stackedLayout(view) {
+        MSGLayout.stackedLayout(view, distribution: .fillEqually) {
             redView
 
-            Sapcer()
+            FlexibleSpacerView()
 
-            greenView
+            HStackView {
+                greenView
+
+                SpacerView()
+            }
         }
     }
 }
