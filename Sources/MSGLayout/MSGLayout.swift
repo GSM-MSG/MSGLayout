@@ -26,4 +26,23 @@ public struct MSGLayout {
         }
         return providers
     }
+
+    public static func stackedLayout(
+        _ root: UIView,
+        axis: NSLayoutConstraint.Axis = .vertical,
+        spacing: CGFloat = .zero,
+        alignment: UIStackView.Alignment = .fill,
+        distribution: UIStackView.Distribution = .fill,
+        ignoreSafeArea: Bool = false,
+        @UIViewSubviewsBuilder _ closure: () -> [UIView]
+    ) {
+        root.stacked(
+            axis,
+            views: closure(),
+            spacing: spacing,
+            alignment: alignment,
+            distribution: distribution,
+            ignoreSafeArea: ignoreSafeArea
+        )
+    }
 }
