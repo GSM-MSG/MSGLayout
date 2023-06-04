@@ -16,7 +16,8 @@ A Swift AutoLayout DSL for iOS in MSG Team.
     - [Swift Package Manager](#swift-package-manager)
     - [Manually](#manually)
   - [Usage](#usage)
-    - [Quick Start](#quick-start)
+    - [Quick Start - AutoLayout](#quick-start---autolayout)
+    - [Quick Start - AutoLayout](#quick-start---autolayout-1)
 
 <br>
 
@@ -61,7 +62,7 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 ## Usage
 
-### Quick Start
+### Quick Start - AutoLayout
 ```swift
 import MSGLayout
 
@@ -93,3 +94,26 @@ final class ViewController: UIViewController {
 }
 ```
 
+### Quick Start - AutoLayout
+```swift
+import MSGLayout
+
+final class ViewController: UIViewController {
+    private let redView = UIView()
+    private let greenView = UIView()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        redView.backgroundColor = .red
+        greenView.backgroundColor = .green
+
+        MSGLayout.stackedLayout(view) {
+            redView
+
+            Sapcer()
+
+            greenView
+        }
+    }
+}
+```
