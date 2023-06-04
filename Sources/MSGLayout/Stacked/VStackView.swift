@@ -3,15 +3,11 @@ import UIKit
 public final class VStackView: UIStackView {
     public init(
         spacing: CGFloat = 0,
-        alignment: UIStackView.Alignment = .fill,
-        distribution: UIStackView.Distribution = .fill,
         @UIViewSubviewsBuilder _ views: () -> [UIView]
     ) {
         super.init(frame: .zero)
         self.axis = .vertical
         self.spacing = spacing
-        self.alignment = alignment
-        self.distribution = distribution
 
         self.addArrangedSubViews(views())
     }
