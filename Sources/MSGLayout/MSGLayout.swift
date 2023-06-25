@@ -45,4 +45,23 @@ public struct MSGLayout {
             ignoreSafeArea: ignoreSafeArea
         )
     }
+
+    public static func stackedScrollLayout(
+        _ root: UIView,
+        axis: NSLayoutConstraint.Axis = .vertical,
+        spacing: CGFloat = .zero,
+        alignment: UIStackView.Alignment = .fill,
+        distribution: UIStackView.Distribution = .fill,
+        ignoreSafeArea: Bool = false,
+        @UIViewSubviewsBuilder _ closure: () -> [UIView]
+    ) {
+        root.scrollStacked(
+            axis,
+            views: closure(),
+            spacing: spacing,
+            alignment: alignment,
+            distribution: distribution,
+            ignoreSafeArea: ignoreSafeArea
+        )
+    }
 }
