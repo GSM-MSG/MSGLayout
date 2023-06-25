@@ -17,7 +17,7 @@ A Swift AutoLayout DSL for iOS in MSG Team.
     - [Manually](#manually)
   - [Usage](#usage)
     - [Quick Start - AutoLayout](#quick-start---autolayout)
-    - [Quick Start - AutoLayout](#quick-start---autolayout-1)
+    - [Quick Start - StackedLayout](#quick-start---stackedlayout)
 
 <br>
 
@@ -80,11 +80,12 @@ final class ViewController: UIViewController {
             greenView
         }
 
-        MSGLayout.buildLayout {
-            redView.layout
-                .center(.toSuperView())
-                .size(50)
+        redView.layout
+            .center(.toSuperView())
+            .size(50)
+            .active()
 
+        MSGLayout.buildLayout {
             greenView.layout
                 .top(.to(redView).bottom, .equal(30))
                 .leading(.to(redView).trailing, .equal(30))
@@ -94,7 +95,7 @@ final class ViewController: UIViewController {
 }
 ```
 
-### Quick Start - AutoLayout
+### Quick Start - StackedLayout
 ```swift
 import MSGLayout
 
