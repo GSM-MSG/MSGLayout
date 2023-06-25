@@ -45,7 +45,7 @@ public extension UIView {
         alignment: UIStackView.Alignment = .fill,
         distribution: UIStackView.Distribution = .fill,
         ignoreSafeArea: Bool = false
-    ) -> UIStackView {
+    ) -> StackedScrollView {
         let stackedScrollView = StackedScrollView(axis: axis, views: { views })
             .spacing(spacing)
             .alignment(alignment)
