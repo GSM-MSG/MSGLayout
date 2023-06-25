@@ -3,7 +3,7 @@ import UIKit
 public extension UIView {
     @discardableResult
     func addSubviews(
-        @UIViewSubviewsBuilder<UIView> _ closure: () -> [UIView]
+        @UIViewSubviewsBuilder _ closure: () -> [UIView]
     ) -> [UIView] {
         let views = closure()
         views.forEach {
