@@ -4,7 +4,8 @@ import Foundation
  MSGLayoutBuilder for autoLayout DSL
  */
 @resultBuilder
-public struct MSGLayoutBuilder<Element> {
+public struct MSGLayoutBuilder {
+    public typealias Element = LayoutProvider
     public static func buildBlock() -> [Element] {
         []
     }

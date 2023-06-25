@@ -6,7 +6,7 @@ import UIKit
 public struct MSGLayout {
     @discardableResult
     public static func buildLayout(
-        @MSGLayoutBuilder<LayoutProvider> _ closure: () -> [LayoutProvider]
+        @MSGLayoutBuilder _ closure: () -> [LayoutProvider]
     ) -> [LayoutProvider] {
         let providers = closure()
         providers.forEach {
@@ -17,7 +17,7 @@ public struct MSGLayout {
 
     @discardableResult
     public static func rebuildLayout(
-        @MSGLayoutBuilder<LayoutProvider> _ closure: () -> [LayoutProvider]
+        @MSGLayoutBuilder _ closure: () -> [LayoutProvider]
     ) -> [LayoutProvider] {
         let providers = closure()
         providers.forEach {
@@ -25,5 +25,43 @@ public struct MSGLayout {
             $0.activate()
         }
         return providers
+    }
+
+    public static func stackedLayout(
+        _ root: UIView,
+        axis: NSLayoutConstraint.Axis = .vertical,
+        spacing: CGFloat = .zero,
+        alignment: UIStackView.Alignment = .fill,
+        distribution: UIStackView.Distribution = .fill,
+        ignoreSafeArea: Bool = false,
+        @UIViewSubviewsBuilder _ closure: () -> [UIView]
+    ) {
+        root.stacked(
+            axis,
+            views: closure(),
+            spacing: spacing,
+            alignment: alignment,
+            distribution: distribution,
+            ignoreSafeArea: ignoreSafeArea
+        )
+    }
+
+    public static func stackedScrollLayout(
+        _ root: UIView,
+        axis: NSLayoutConstraint.Axis = .vertical,
+        spacing: CGFloat = .zero,
+        alignment: UIStackView.Alignment = .fill,
+        distribution: UIStackView.Distribution = .fill,
+        ignoreSafeArea: Bool = false,
+        @UIViewSubviewsBuilder _ closure: () -> [UIView]
+    ) {
+        root.scrollStacked(
+            axis,
+            views: closure(),
+            spacing: spacing,
+            alignment: alignment,
+            distribution: distribution,
+            ignoreSafeArea: ignoreSafeArea
+        )
     }
 }
