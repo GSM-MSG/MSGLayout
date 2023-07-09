@@ -27,6 +27,7 @@ public struct MSGLayout {
         return providers
     }
 
+    @discardableResult
     public static func stackedLayout(
         _ root: UIView,
         axis: NSLayoutConstraint.Axis = .vertical,
@@ -35,7 +36,7 @@ public struct MSGLayout {
         distribution: UIStackView.Distribution = .fill,
         ignoreSafeArea: Bool = false,
         @UIViewSubviewsBuilder _ closure: () -> [UIView]
-    ) {
+    ) -> UIStackView {
         root.stacked(
             axis,
             views: closure(),
@@ -46,6 +47,7 @@ public struct MSGLayout {
         )
     }
 
+    @discardableResult
     public static func stackedScrollLayout(
         _ root: UIView,
         axis: NSLayoutConstraint.Axis = .vertical,
@@ -54,7 +56,7 @@ public struct MSGLayout {
         distribution: UIStackView.Distribution = .fill,
         ignoreSafeArea: Bool = false,
         @UIViewSubviewsBuilder _ closure: () -> [UIView]
-    ) {
+    ) -> StackedScrollView {
         root.scrollStacked(
             axis,
             views: closure(),
